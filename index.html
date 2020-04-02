@@ -105,6 +105,7 @@ function destroy_e(aB, aEs, aC) {
   return aC;
 }
 var c_b = bs.length-1;
+ var b_speed = 8
 forever(60, function() {
   if (pressed("a")) {
     p.slide(-step, 0);
@@ -134,7 +135,7 @@ forever(60, function() {
     gameOver(); 
   }
   if(isSpace === true) {
-    b.fd(6);
+   b.fd(b_speed);
   }
   if (!b.inside(window)) {
     isGunDone = true;
