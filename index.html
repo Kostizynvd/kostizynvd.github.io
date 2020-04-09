@@ -68,7 +68,7 @@ var b_h = wh/100;
 var num_of_b = 30; 
 var bs = []; 
 
-var x1 = ww/2;
+var x1 = ww/2 - b_w * 2;
 var y1 = -wh/2 + b_h;
 var distance_y_b = 1.7 * b_h;
 
@@ -81,6 +81,7 @@ for (var i = 0; i < num_of_b; i++) {
   b_t.jumpto(x1, y1);
   bs.push(b_t);
  b_t.wear("img/bullet_ball.png", 35);
+ 
 }    
  function gameOver() {
     cs();
