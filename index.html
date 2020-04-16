@@ -3,7 +3,7 @@
 <html>
 <body><script src="https://pencilcode.net/turtlebits.js" crossorigin="anonymous" type="text/javascript"></script><script type="text/javascript">
 eval(this._start_ide_js_);
-
+//Край экрана
 var windowSize = sizexy();
 var startPoint = -windowSize[1]/2 +25;
 speed (Infinity);
@@ -14,6 +14,7 @@ var p = new Sprite({
  height: 10, 
  width: 50 
 });
+//Ножи
 var knifes = {
   k1: (new Sprite({color:blue, width: 170, height: 10})),
   k2: new Sprite({color:green, width: 170, height: 10})
@@ -22,6 +23,7 @@ var knifes = {
   knifes.k2.bk(70);
  knifes.k1.wear("img/platforms.png", 80);
   knifes.k2.wear("img/platforms.png", 80);
+ //Патрон
 var b = new Sprite({
  color: yellow, 
  height: 10, 
@@ -32,13 +34,15 @@ b.ht();
 p.jumpto(0, startPoint+30);
 p.wear("https://pngicon.ru/file/uploads/rocket.png", 100);
 debug(getxy());
+ //Скорость шага
 var step = 8;
 var position;
 var isSpace = false;
+ //Скорость ножей
 var k1Speed = 13;
 var k2Speed = -10;
 var isGunDone = true;
-
+//Враги
 var es = [];   
 var num_of_e = 24;
 var e_w = 50;
@@ -65,6 +69,7 @@ for (var i = 0; i < num_of_e; i++) {
 }
 var b_w = ww/16; 
 var b_h = wh/100; 
+ //Количетво пуль
 var num_of_b = 30; 
 var bs = []; 
 
@@ -80,15 +85,18 @@ for (var i = 0; i < num_of_b; i++) {
   
   y1 = y1 + distance_y_b;
   b_t.jumpto(x1, y1);
+ //толкание пули в массив
   bs.push(b_t);
  
 }    
+ //Проигрыш 
  function gameOver() {
     cs();
     hide();
     box(red, 10000);
     write("<center style='margin-top:"+wh/2+"px;font-size:50px;font-wight:bold;'><h1>Game Over</h1></center>");
  }
+ //Победа
  function youWin () {
    cs();
    box(green, 10000);
