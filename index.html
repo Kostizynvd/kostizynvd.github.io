@@ -3,6 +3,119 @@
 <html>
 <body><script src="https://pencilcode.net/turtlebits.js" crossorigin="anonymous" type="text/javascript"></script><script type="text/javascript">
 eval(this._start_ide_js_);
+ function triangle(aColor, aSize) {
+  pen(aColor);
+  rt(30);
+  fd(aSize);
+  rt(120);
+  fd(aSize);
+  rt(120);
+  fd(aSize);
+  fill(aColor);
+}
+
+function rectangle(aColor, aSize, bSize) {
+  pen(aColor);
+  fd(aSize);
+  rt(90);
+  fd(bSize);
+  rt(90);
+  fd(aSize);
+  rt(90);
+  fd(bSize);
+  rt(90);
+  fill(aColor);
+}
+speed(Infinity);
+var button10 = new Sprite({color:(rgba(0,0,0, 0.001))});
+//button10(rgb(0,0,0, 0.001));
+box(black, 1000);
+button10.wear('https://github.com/h0ne153/CosmoPencil-img/blob/master/play.png?raw=true', 100);
+button10.jumpto(-50,75);
+var button11 = new Sprite({color:(rgba(0,0,0, 0.001))});
+button11.wear('https://github.com/h0ne153/CosmoPencil-img/blob/master/menu.png?raw=true', 100);
+button11.jumpto(155, 75);
+
+
+speed(Infinity);
+var button1 = {
+  x0: -100,
+  y0: 40,
+  height: 60,
+  width: 120,
+  color: red,
+  link: "https://github.com/h0ne153/CosmoPencil-img/blob/master/play.png?raw=true"
+};
+var button2 = {
+  x0: -100,
+  y0: -40,
+  height: 60,
+  width: 120,
+  color: green
+};
+var button3 = {
+  x0: 100,
+  y0: -40,
+  height: 60,
+  width: 120,
+  color: blue
+};
+var button4 = {
+  x0: 100,
+  y0: 40,
+  height: 60,
+  width: 120,
+  color: pink,
+  link: "https://github.com/h0ne153/CosmoPencil-img/blob/master/menu.png?raw=true"
+};
+
+function drawButton(aButton) {
+  jumpto(aButton.x0, aButton.y0);
+  rectangle(aButton.color, aButton.height, aButton.width);
+}
+
+function drawButton1(aButton) {
+  var pic2 = img(aButton.link);
+}
+
+
+//drawButton1(button1);
+//drawButton(button2);
+//drawButton(button3);
+//drawButton(button4);
+hide();
+
+function onClickButton(aEvent, aButton) {
+  var a = {x: aButton.x0, y: aButton.y0};
+  var c = {x: aButton.x0 + aButton.width, y: aButton.y0+aButton.height};
+  
+  var x = aEvent.x;
+  var y = aEvent.y;
+  
+  if (x >= a.x && x <= c.x &&
+      y >= a.y && y <= c.y)
+      return true;
+      
+  return false;
+}
+
+click(function(event) {
+  if (onClickButton(event, button1)) {
+    speed(Infinity);
+    cs();
+box(1500, black);
+// Размер рабочей области
+// в виде массива [ширина, высота]
+// windowSize[0] - ширина
+// windowSize[1] - высота
+//     var t = new Turtle(red);
+var windowSize = sizexy();
+
+//Стартовая точка игрока по оси Y
+var startPoint = -windowSize[1]/2 + 50;
+jumpto(0, startPoint+40);
+
+wear("https://i1.wp.com/sagesingularity.files.wordpress.com/2017/06/cropped-bluefighter1.png?w=700&h=&crop&ssl=1", 150);
 //Край экрана
 var windowSize = sizexy();
 var startPoint = -windowSize[1]/2 +25;
