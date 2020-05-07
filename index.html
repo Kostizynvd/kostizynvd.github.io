@@ -145,6 +145,8 @@ forever(60, function() {
     }
     if (c_b== -1)
     gameOver(); 
+   if (c_b % 3) {
+    debug(true);
   }
   if(isSpace === true) {
    b.fd(b_speed);
@@ -156,6 +158,7 @@ forever(60, function() {
     b.touches(knifes.k2))  {
       b.ht();
       isGunDone = true;
+   
   }
   knifes.k1.slide(k1Speed, 0);
   knifes.k2.slide(k2Speed, 0);
@@ -169,7 +172,7 @@ forever(60, function() {
     k1Speed = -k1Speed;
   }
     var k2x = knifes.k2.getxy()[0];
-  var k2xr = k2x + knifes.k2.width()/2;
+  var k2xr = k2x + knifes.k2.width()/2;%
   if (k2xr > windowSize[0]/2) {
     k2Speed = -k2Speed;
   }
